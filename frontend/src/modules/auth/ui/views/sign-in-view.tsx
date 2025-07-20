@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertTitle } from "@/components/ui/alert";
+import { FaGoogle, FaGithub, FaGit } from "react-icons/fa"
 
 import {
   Form,
@@ -53,6 +54,7 @@ export default function SignInView() {
       {
         onSuccess: () => {
           setPending(false);
+          router.push('/');
         },
         onError: ({ error }) => {
           setPending(false);
@@ -74,6 +76,7 @@ export default function SignInView() {
       {
         onSuccess: () => {
           setPending(false);
+          router.push('/');
         },
         onError: ({ error }) => {
           setPending(false);
@@ -91,15 +94,15 @@ export default function SignInView() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 md:p-8">
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col items-center text-center">
-                  <h1 className="text-3xl text-green-700 mb-2 font-bold">
-                    Login
+                  <h1 className="text-3xl text-green-900/90 mb-2 font-bold">
+                    Log in
                   </h1>
                   <p className="text-muted-foreground text-balance">
                     Login to your account!
                   </p>
                 </div>
 
-                <div className="grid gap-3">
+                <div className="grid gap-3 text-green-900/90">
                   <FormField
                     control={form.control}
                     name="email"
@@ -108,6 +111,7 @@ export default function SignInView() {
                         <FormLabel>Email</FormLabel>
                         <FormControl>
                           <Input
+                            className="border border-green-900/90"
                             type="email"
                             placeholder="hello@example.com"
                             {...field}
@@ -119,7 +123,7 @@ export default function SignInView() {
                   />
                 </div>
 
-                <div className="grid gap-3">
+                <div className="grid gap-3 text-green-900/90">
                   <FormField
                     control={form.control}
                     name="password"
@@ -128,6 +132,7 @@ export default function SignInView() {
                         <FormLabel>Password</FormLabel>
                         <FormControl>
                           <Input
+                            className="border border-green-900/90"
                             type="password"
                             placeholder="********"
                             {...field}
@@ -149,36 +154,36 @@ export default function SignInView() {
                 <Button
                   type="submit"
                   disabled={pending}
-                  className="w-full bg-green-700 hover:bg-green-800 cursor-pointer"
+                  className="w-full cursor-pointer"
                 >
-                  Login
+                  Log in
                 </Button>
 
                 <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-6/10 after:z-0 after:flex after:items-center after:border-t">
-                  <span className="bg-card text-muted-foreground relative z-10 px-2">
+                  <span className="bg-card text-green-900 relative z-10 px-2">
                     or
                   </span>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <Button
-                    className="w-full cursor-pointer"
+                    className="w-full cursor-pointer border-2 border-green-900/90 text-green-900/90"
                     disabled={pending}
                     type="button"
                     onClick={() => onSocial("google")}
                     variant="outline"
                   >
-                    Login with Google
+                    <FaGoogle /> Log in with Google
                   </Button>
 
                   <Button
-                    className="w-full cursor-pointer"
+                    className="w-full cursor-pointer border-2 border-green-900/90 text-green-900/90"
                     disabled={pending}
                     type="button"
                     onClick={() => onSocial("github")}
                     variant="outline"
                   >
-                    Login with Github
+                    <FaGithub /> Log in with Github
                   </Button>
                 </div>
 
@@ -186,7 +191,7 @@ export default function SignInView() {
                   Don't have an account?{" "}
                   <Link
                     href="/auth/sign-up"
-                    className="underline underline-offset-4"
+                    className="underline underline-offset-4 font-semibold text-green-900/90"
                   >
                     Sign up
                   </Link>
@@ -195,7 +200,7 @@ export default function SignInView() {
             </form>
           </Form>
 
-          <div className="bg-radial from-green-600 to-green-900 relative hidden md:flex gap-y-4 items-center justify-center">
+          <div className="bg-radial from-sidebar-accent to-sidebar relative hidden md:flex gap-y-4 items-center justify-center">
             <img
               src="/logo.svg"
               alt="logo"
