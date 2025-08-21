@@ -12,7 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { BotIcon, icons, StarIcon, VideoIcon } from "lucide-react";
+import { BotIcon, StarIcon, VideoIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";

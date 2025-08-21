@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertTitle } from "@/components/ui/alert";
-import { FaGoogle, FaGithub, FaGit } from "react-icons/fa"
+import { FaGoogle, FaGithub } from "react-icons/fa"
 
 import {
   Form,
@@ -188,7 +188,7 @@ export default function SignInView() {
                 </div>
 
                 <div className="text-center text-sm">
-                  Don't have an account?{" "}
+                  Don&apos;t have an account?{" "}
                   <Link
                     href="/auth/sign-up"
                     className="underline underline-offset-4 font-semibold text-green-900/90"
